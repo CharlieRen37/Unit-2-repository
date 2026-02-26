@@ -39,6 +39,16 @@ void mikeWazowski(int x,int y){
   //feet
   rect(-115,350,1,1);
   //eye
-  //teeth
+  fill(255);
+  ellipse(0,-60,200,200);
+  fill(15,149,121);
+  ellipse(0,-60,85,85);
+  fill(0);
+  circle(0,-60,55);
+  //mouth
+  fill(0);
+  ellipse(0,110,120,60);
+  fill(106,160,15);
+  rect(0,130,1,1);
   //mouth
 }
