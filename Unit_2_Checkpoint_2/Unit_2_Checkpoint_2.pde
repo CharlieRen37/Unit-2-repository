@@ -10,26 +10,12 @@ void setup() {
 //draw function
 void draw() {
   mikeWazowski(300, 225);
-  //claws(90,405,0);
-  //claws(90,405,30);
-  //claws(90,405,-30);
 }
-//void claws(int x,int y,int a){
-//pushMatrix();
-//translate(x,y);
-//rotate(radians(a));
-///strokeWeight(7);
-//stroke(142,214,84);
-//line(0,0,0,32);
-//strokeWeight(0);
-// fill(206,206,173);
-//triangle(-5,31,5,31,0,40);
-//popMatrix();
-//}
 
 void mikeWazowski(int x, int y) {
   pushMatrix();
   translate(x, y);
+  scale(0.5);
   stroke(0);
   strokeWeight(0);
   //horns
@@ -39,8 +25,8 @@ void mikeWazowski(int x, int y) {
   triangle(105, -215, 93, -160, 65, -175);
   //legs
   fill(142, 214, 84);
-  rect(-95, 150, 20, 200);
-  rect(75, 150, 20, 200);
+  rect(-95, 150, 20, 210);
+  rect(75, 150, 20, 210);
   //arms
   strokeWeight(15);
   stroke(142, 214, 84);
@@ -54,8 +40,6 @@ void mikeWazowski(int x, int y) {
   //claws
   //body/head
   ellipse(0, 0, 350, 375);
-  //feet
-  rect(-115, 350, 1, 1);
   //eye
   fill(255);
   ellipse(0, -60, 200, 200);
@@ -69,17 +53,40 @@ void mikeWazowski(int x, int y) {
   fill(106, 160, 15);
   rect(0, 125, 1, 1);
   ellipse(0, 125, 100, 30);
-  void claws(int x, int y, int a){
-    pushMatrix();
-    translate(x, y);
-    rotate(radians(a));
-    strokeWeight(7);
-    stroke(142, 214, 84);
-    line(0, 0, 0, 32);
-    strokeWeight(0);
-    fill(206, 206, 173);
-    triangle(-5, 31, 5, 31, 0, 40);
-    popMatrix();
-  }
+  claws(-210, 180, 0);
+  claws(-210, 180, 30);
+  claws(-210, 180, -30);
+  claws(210, 180, 0);
+  claws(210, 180, 30);
+  claws(210, 180, -30);
+  //feet
+  foot(-110,360);
+  foot(60,360);
+  popMatrix();
+}
+
+void claws(int x, int y, int a) {
+  pushMatrix();
+  translate(x, y);
+  rotate(radians(a));
+  strokeWeight(7);
+  stroke(142, 214, 84);
+  line(0, 0, 0, 32);
+  strokeWeight(0);
+  fill(206, 206, 173);
+  triangle(-5, 31, 5, 31, 0, 40);
+  popMatrix();
+}
+
+
+void foot(int x, int y) {
+  pushMatrix();
+  translate(x,y);
+  fill(142, 214, 84);
+  rect(0,0,50,20);
+  fill(206, 206, 173);
+  rect(0,5,8,20);
+  rect(21,5,8,20);
+  rect(42,5,8,20);
   popMatrix();
 }
