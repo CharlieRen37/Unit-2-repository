@@ -9,13 +9,13 @@ void setup() {
 }
 //draw function
 void draw() {
-  mikeWazowski(300, 225);
+  mikeWazowski(300,225,0.5);
 }
 
-void mikeWazowski(int x, int y) {
+void mikeWazowski(int x, int y, float s) {
   pushMatrix();
   translate(x, y);
-  scale(0.5);
+  scale(s);
   stroke(0);
   strokeWeight(0);
   //horns
@@ -85,8 +85,8 @@ void foot(int x, int y) {
   fill(142, 214, 84);
   rect(0,0,50,20);
   fill(206, 206, 173);
-  rect(0,5,8,20);
-  rect(21,5,8,20);
-  rect(42,5,8,20);
+  rect(0,5,8,15);
+  rect(21,5,8,15);
+  rect(42,5,8,15);
   popMatrix();
 }
