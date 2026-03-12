@@ -19,7 +19,7 @@ void scene(float x, float y) {
   translate(x, y);
   //rain(0,0,0);
   //people(0,0,0);
-  debris1(0, 0, 0);
+  debris1(0, 0);
   popMatrix();
 }
 //rain
@@ -53,41 +53,60 @@ void people(float x, float y, float v) {
   popMatrix();
 }
 //debris 1
-void debris1(float x, float y, float v) {
+void debris1(float x, float v) {
   pushMatrix();
   translate(x, y);
   line(-900, 0, 900, 0);
   line(0, -900, 0, 900);
-  debris11();
-  debris12();
-  debris13();
-  debris14();
+  debris11(0);
+  debris12(0);
+  debris13(0);
+  debris14(0);
   popMatrix();
 }
 
 //components
-void debris11() {
+void debris11(float y) {
   pushMatrix();
   quad(0, 0, 7, 0, 7, 7, 2, 8);
   popMatrix();
 }
 
-void debris12() {
+void debris12(float y) {
   pushMatrix();
   quad(14, 5.5, 19, 4, 21, 10.5, 15, 11.5);
   popMatrix();
 }
 
-void debris13() {
+void debris13(float y) {
   pushMatrix();
   quad(5.5,14,11.5,15.5,11,21,6,19.5);
   popMatrix();
 }
 
-void debris14(){
+void debris14(float y){
   pushMatrix();
-  quad(3.5,17.5,
+  translate(
+  beginShape();
+  vertex(-4.5,12);
+  vertex(-13,9);
+  vertex(-12,-3);
+  vertex(-11,-5.5);
+  vertex(-10,-7.5);
+  vertex(-9,-9);
+  vertex(-8,-10);
+  vertex(-7,-10.5);
+  vertex(-5,-11);
+  vertex(-1,-11.5);
+  vertex(7.5,-12.5);
+  vertex(6.5,-6.5);
+  vertex(-2,-5.5);
+  endShape(CLOSE);
+  y=y+4.5;
+  if(v>900){
+    v=
   popMatrix();
+}
 
 
 
